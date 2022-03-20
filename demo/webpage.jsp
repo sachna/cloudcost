@@ -1,9 +1,28 @@
+<%@ page import= "java.io.BufferedReader" %>
+<%@ page import= "java.io.IOException"%>
+<%@ page import= "java.io.InputStreamReader"%>
+<%@ page import= "java.net.HttpURLConnection"%>
+<%@ page import = "java.net.MalformedURLException"%>
+<%@ page import= "java.net.URL"%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>HTML5 Web Page Layout</title>
 <style>
+  img {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  width: 75px; /* Set a small width */
+}
+
+/* Add a hover effect (blue shadow) */
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
     body {
         font: 14px Arial,sans-serif; 
         margin: 0px;
@@ -18,12 +37,11 @@
     }
     .container {
         width: 100%;
-        background: #f2f2f2;  
+        background: white;  
     }
     nav, section {
         float: left; 
         padding: 20px;
-        min-height: 500px;
         box-sizing: border-box;
     }
     section {
@@ -32,6 +50,7 @@
     nav {
         width: 13%;             
         background: #d4d7dc;
+        height: 38pc;
     }    
     nav ul {
         list-style: none; 
@@ -74,173 +93,91 @@
                 </ul>   
                 <ul>
                     <h3><li><a href="webpage.jsp">Web Application</a></li></h3>
-                </ul>                             
+                </ul>  
+                <ul>
+                  <h3><li><a href="webpage.jsp">Custom</a></li></h3>
+                </ul>                         
             </nav>
             <section id="section1">
                 <h2>Welcome to our site</h2>
                 <p>Here you will learn how to create websites...</p>
+                <br> <br> <br> 
                 <form action="#">
-                    <label for="lang">Language</label>
-                    <select name="languages" id="lang">
-                      <option value="javascript">JavaScript</option>
-                      <option value="php">PHP</option>
-                      <option value="java">Java</option>
-                      <option value="golang">Golang</option>
-                      <option value="python">Python</option>
-                      <option value="c#">C#</option>
-                      <option value="C++">C++</option>
-                      <option value="erlang">Erlang</option>
-                    </select>
-                    &nbsp;	&nbsp;
-                    <label for="lang">Language</label>
+                    <label for="lang"><b>Currency</b></label>
                     <select name="languages1" id="lang1">
-                        <option value="javascript">JavaScript</option>
-                        <option value="php">PHP</option>
-                        <option value="java">Java</option>
-                        <option value="golang">Golang</option>
-                        <option value="python">Python</option>
-                        <option value="c#">C#</option>
-                        <option value="C++">C++</option>
-                        <option value="erlang">Erlang</option>
+                        <option value="javascript">USD</option>
+                        <option value="php">CAD</option>
+                        <option value="java">EURO</option>
                       </select>
-                      &nbsp;	&nbsp;
-                      <label for="lang">Language</label>
-                      <select name="languages2" id="lang2">
-                        <option value="javascript">JavaScript</option>
-                        <option value="php">PHP</option>
-                        <option value="java">Java</option>
-                        <option value="golang">Golang</option>
-                        <option value="python">Python</option>
-                        <option value="c#">C#</option>
-                        <option value="C++">C++</option>
-                        <option value="erlang">Erlang</option>
-                      </select>
-                      &nbsp;	&nbsp;
-                      <label for="lang">Language</label>
-                      <select name="languages3" id="lang3">
-                        <option value="javascript">JavaScript</option>
-                        <option value="php">PHP</option>
-                        <option value="java">Java</option>
-                        <option value="golang">Golang</option>
-                        <option value="python">Python</option>
-                        <option value="c#">C#</option>
-                        <option value="C++">C++</option>
-                        <option value="erlang">Erlang</option>
-                      </select>
-                      &nbsp;	&nbsp;
-                      <label for="lang">Language</label>
-                      <select name="languages4" id="lang4">
-                        <option value="javascript">JavaScript</option>
-                        <option value="php">PHP</option>
-                        <option value="java">Java</option>
-                        <option value="golang">Golang</option>
-                        <option value="python">Python</option>
-                        <option value="c#">C#</option>
-                        <option value="C++">C++</option>
-                        <option value="erlang">Erlang</option>
-                      </select>
-                      &nbsp;	&nbsp;
-                    <input type="submit" value="Submit" />
                     <br><br><br><br>
                     <table>
                         <tr>
                           <td>&nbsp;</td>
-                          <td>Knocky</td>
-                          <td>Flor</td>
-                          <td>Ella</td>
-                          <td>Juan</td>
+                          <td><a target="_blank" >
+                            <img src="OIP.jpg" alt="AWS">
+                          </a></td>
+                          <td><a target="_blank" >
+                            <img src="azure.jpg" alt="Azure">
+                          </a></td>
+                          <td><a target="_blank" >
+                            <img src="gcp.jpg" alt="Google">
+                          </a></td>
+                          <td><a target="_blank" >
+                            <img src="oracle.jpg" alt="Oracle">
+                          </a></td>
                         </tr>
                         <tr>
-                          <td>Breed</td>
-                          <td>Jack Russell</td>
-                          <td>Poodle</td>
-                          <td>Streetdog</td>
-                          <td>Cocker Spaniel</td>
-                        </tr>
+                          <td><br><b>Region</b><br><br></td>
+                          <td>                            
+                            <select name="languages1" id="lang1" style="width: 200px;">
+                              <option value="javascript">USD</option>
+                              <option value="php">CAD</option>
+                              <option value="java">EURO</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select name="languages1" id="lang1" style="width: 200px;">
+                              <option value="javascript">USD</option>
+                              <option value="php">CAD</option>
+                              <option value="java">EURO</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select name="languages1" id="lang1" style="width: 200px;">
+                              <option value="javascript">USD</option>
+                              <option value="php">CAD</option>
+                              <option value="java">EURO</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select name="languages1" id="lang1" style="width: 200px;">
+                              <option value="javascript">USD</option>
+                              <option value="php">CAD</option>
+                              <option value="java">EURO</option>
+                            </select>
+                          </td>
+                        </tr>                       
                         <tr>
-                          <td>Age</td>
-                          <td>16</td>
-                          <td>9</td>
-                          <td>10</td>
-                          <td>5</td>
-                        </tr>
-                        <tr>
-                          <td>Owner</td>
-                          <td>Mother-in-law</td>
-                          <td>Me</td>
-                          <td>Me</td>
-                          <td>Sister-in-law</td>
-                        </tr>
-                        <tr>
-                          <td>Eating Habits</td>
-                          <td>Eats everyone's leftovers</td>
-                          <td>Nibbles at food</td>
-                          <td>Hearty eater</td>
-                          <td>Will eat till he explodes</td>
-                        </tr>
-                        <tr>
-                            <td>Eating Habits</td>
+                            <td><br><b>Product Name</b><br><br></td>
                             <td>Eats everyone's leftovers</td>
                             <td>Nibbles at food</td>
                             <td>Hearty eater</td>
                             <td>Will eat till he explodes</td>
                           </tr>
                           <tr>
-                            <td>Eating Habits</td>
+                            <td><br><b>Product Details</b><br><br></td>
                             <td>Eats everyone's leftovers</td>
                             <td>Nibbles at food</td>
                             <td>Hearty eater</td>
                             <td>Will eat till he explodes</td>
                           </tr>
                           <tr>
-                            <td>Eating Habits</td>
+                            <td><br><b>Notes</b><br><br></td>
                             <td>Eats everyone's leftovers</td>
                             <td>Nibbles at food</td>
                             <td>Hearty eater</td>
                             <td>Will eat till he explodes</td>
-                          </tr>
-                          <tr>
-                            <td>Eating Habits</td>
-                            <td>Eats everyone's leftovers</td>
-                            <td>Nibbles at food</td>
-                            <td>Hearty eater</td>
-                            <td>Will eat till he explodes</td>
-                          </tr>
-                          <tr>
-                            <td>Eating Habits</td>
-                            <td>Eats everyone's leftovers</td>
-                            <td>Nibbles at food</td>
-                            <td>Hearty eater</td>
-                            <td>Will eat till he explodes</td>
-                          </tr>
-                          <tr>
-                            <td>Eating Habits</td>
-                            <td>Eats everyone's leftovers</td>
-                            <td>Nibbles at food</td>
-                            <td>Hearty eater</td>
-                            <td>Will eat till he explodes</td>
-                          </tr>
-                          <tr>
-                            <td>Eating Habits</td>
-                            <td>Eats everyone's leftovers</td>
-                            <td>Nibbles at food</td>
-                            <td>Hearty eater</td>
-                            <td>Will eat till he explodes</td>
-                          </tr>
-                          <tr>
-                            <td>Eating Habits</td>
-                            <td>Eats everyone's leftovers</td>
-                            <td>Nibbles at food</td>
-                            <td>Hearty eater</td>
-                            <td>Will eat till he explodes</td>
-                          </tr>
-                          <tr>
-                            <td>Eating Habits</td>
-                            <td>Eats everyone's leftovers</td>
-                            <td>Nibbles at food</td>
-                            <td>Hearty eater</td>
-                            <td>Will eat till he explodes</td>
-                          </tr>
+                          </tr>                
                       </table>
               </form>
             </section>
@@ -258,3 +195,34 @@
        
     }
 </script>
+
+
+<%
+JSONService();
+%>
+
+<%!
+public void JSONService() throws Exception {
+  System.out.println("hi");
+URL url = new URL("https://prices.azure.com/api/retail/prices");
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		conn.setRequestMethod("GET");
+		conn.setRequestProperty("Accept", "application/json");
+    System.out.println("hi21");
+		if (conn.getResponseCode() != 200) {
+			throw new RuntimeException("Failed : HTTP error code : "
+					+ conn.getResponseCode());
+		}
+    System.out.println("hi2");
+		BufferedReader br = new BufferedReader(new InputStreamReader(
+			(conn.getInputStream())));
+
+		String output;
+		System.out.println("Output from Server .... \n");
+		while ((output = br.readLine()) != null) {
+			System.out.println(output);
+		}
+
+		conn.disconnect();
+  }
+%>
