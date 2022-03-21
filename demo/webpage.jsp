@@ -1,10 +1,19 @@
 <%@ page import= "java.io.BufferedReader" %>
 <%@ page import= "java.io.IOException"%>
+<%@ page import= "java.util.*"%>
+<%@ page import= "java.io.*"%>
 <%@ page import= "java.io.InputStreamReader"%>
 <%@ page import= "java.net.HttpURLConnection"%>
 <%@ page import = "java.net.MalformedURLException"%>
 <%@ page import= "java.net.URL"%>
-
+<%
+//JSONService();
+String jspPath = session.getServletContext().getRealPath("/");
+List Azurelst = FileReadingDemo(jspPath + "/AzureRegion.txt");
+List AWSlst = FileReadingDemo(jspPath + "/AWSRegion.txt");
+List GCPlst = FileReadingDemo(jspPath + "/GoogleRegion.txt");
+List Oraclelst = FileReadingDemo(jspPath + "/OracleRegion.txt");
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -130,10 +139,15 @@ img:hover {
                           <td><br><b>Region</b><br><br></td>
                           <td>                            
                             <select name="languages1" id="lang1" style="width: 200px;">
-                              <option value="javascript">USD</option>
-                              <option value="php">CAD</option>
-                              <option value="java">EURO</option>
-                            </select>
+                           <%
+                              for(int i = 0; i < Azurelst.size() ; i++) {                              
+                           %>
+                              <option value="javascript"><%=(String) Azurelst.get(i)%></option>
+                           
+                            <%                             
+                            } 
+                            %>  
+                          </select>                       
                           </td>
                           <td>
                             <select name="languages1" id="lang1" style="width: 200px;">
@@ -197,9 +211,7 @@ img:hover {
 </script>
 
 
-<%
-JSONService();
-%>
+
 
 <%!
 public void JSONService() throws Exception {
@@ -225,4 +237,31 @@ URL url = new URL("https://prices.azure.com/api/retail/prices");
 
 		conn.disconnect();
   }
+
+  public List FileReadingDemo(String fileName) throws Exception {
+    List<String> result = new ArrayList<>();
+      BufferedReader br = null;
+    
+      try {
+       
+        //String txtFilePath = jspPath+ "/aFile.txt";
+        System.out.println(System.getProperty("user.dir"));
+        br = new BufferedReader(new FileReader(fileName));
+    
+        String line;
+        while ((line = br.readLine()) != null) {
+          result.add(line.trim());
+          System.out.println("=="+line.trim());
+        }
+    
+      } catch (IOException e) {
+        e.printStackTrace();
+      } finally {
+        if (br != null) {
+          br.close();
+        }
+      }
+      return result;
+    }
+  
 %>
