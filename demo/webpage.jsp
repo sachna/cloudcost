@@ -6,6 +6,11 @@
 <%@ page import= "java.net.HttpURLConnection"%>
 <%@ page import = "java.net.MalformedURLException"%>
 <%@ page import= "java.net.URL"%>
+<%@ page import= "org.json.simple.JSONArray"%>;
+<%@ page import= "org.json.simple.JSONObject"%>;
+<%@ page import= "org.json.simple.parser.ParseException"%>;
+<%@ page import= "org.json.simple.parser.JSONParser"%>;
+
 <%
 //JSONService();
 String jspPath = session.getServletContext().getRealPath("/");
@@ -13,6 +18,42 @@ List Azurelst = FileReadingDemo(jspPath + "/AzureRegion.txt");
 List AWSlst = FileReadingDemo(jspPath + "/AWSRegion.txt");
 List GCPlst = FileReadingDemo(jspPath + "/GoogleRegion.txt");
 List Oraclelst = FileReadingDemo(jspPath + "/OracleRegion.txt");
+String strRegion11 = request.getParameter("region1") ;
+String strRegion12 = request.getParameter("region2") ;
+String strRegion13 = request.getParameter("region3") ;
+String strRegion14 = request.getParameter("region4") ;
+System.out.println("Region1 = " + strRegion11);
+
+
+if(strRegion11 == null) strRegion11 = "US East (N. Virginia)";
+if(strRegion12 == null) strRegion12 = "East US";
+if(strRegion13 == null) strRegion13 = "Ashburn, Virigina, USA(us-east)";
+if(strRegion14 == null) strRegion14 = "US East (Ashburn)";
+System.out.println("Region1 = " + strRegion11);
+
+HashMap azureMap = getAzureDetails("US East", "E2d v4");
+System.out.println(azureMap);
+
+String strAWSVM = "";
+String strAzureVM = (String) azureMap.get("product");
+String strGCPVM = "";
+String strOracleVM = "";
+
+String  strAWSVMHCost = "";
+String  strAzureVMHCost = (String) azureMap.get("hourCost");
+String  strGCPVMHCost = "";
+String  strOracleVMHCost = "";
+
+String  strAWSVM1YCost = "";
+String strAzureVM1YCost = (String) azureMap.get("1YearCost");
+String strGCPVM1YCost = "";
+String strOracleVM1YCost = "";
+
+String strAWSVM3YCost = "";
+String strAzureVM3YCost = (String) azureMap.get("3YearCost");
+String strGCPVM3YCost = "";
+String strOracleVM3YCost = "";
+
 %>
 
 <!DOCTYPE html>
@@ -37,7 +78,7 @@ img:hover {
         margin: 0px;
     }
     header {
-        padding: 10px 20px;
+        padding: 5px 5px;
         background: #acb3b9; 
         text-align: center;
     }
@@ -50,7 +91,7 @@ img:hover {
     }
     nav, section {
         float: left; 
-        padding: 20px;
+        padding: 10px;
         box-sizing: border-box;
     }
     section {
@@ -86,7 +127,8 @@ img:hover {
     }
     td {
      border: 1px solid black;
-     width: 200px;
+     width: 350px;
+     height: auto;
     }
 </style>
 </head>
@@ -108,17 +150,16 @@ img:hover {
                 </ul>                         
             </nav>
             <section id="section1">
-                <h2>Welcome to our site</h2>
-                <p>Here you will learn how to create websites...</p>
-                <br> <br> <br> 
-                <form action="#">
-                    <label for="lang"><b>Currency</b></label>
-                    <select name="languages1" id="lang1">
-                        <option value="javascript">USD</option>
-                        <option value="php">CAD</option>
-                        <option value="java">EURO</option>
+                Welcome to our site
+                <br> <br> <br> <br> 
+                <form id="form1" name="form1" action="webpage.jsp" method="POST">
+                    <label for="currency"><b>Currency</b></label>
+                    <select name="currency1" id="currency1">
+                        <option value="USD">USD</option>
+                        <option value="CAD">CAD</option>
+                        <option value="EURO">EURO</option>
                       </select>
-                    <br><br><br><br>
+                    <br><br>
                     <table>
                         <tr>
                           <td>&nbsp;</td>
@@ -136,62 +177,131 @@ img:hover {
                           </a></td>
                         </tr>
                         <tr>
-                          <td><br><b>Region</b><br><br></td>
+                          <td><b>Region</b></td>
                           <td>                            
-                            <select name="languages1" id="lang1" style="width: 200px;">
+                            <select name="region1" id="region1" style="width: 200px;" onchange="myFunctiondemo()">
                            <%
-                              for(int i = 0; i < Azurelst.size() ; i++) {                              
+                              for(int i = 0; i < AWSlst.size() ; i++) {   
+                              if(strRegion11.equals((String) AWSlst.get(i)))       
+                              {                                                
                            %>
-                              <option value="javascript"><%=(String) Azurelst.get(i)%></option>
+                              <option selected value="<%=(String) AWSlst.get(i)%>"><%=(String) AWSlst.get(i)%></option>
                            
-                            <%                             
+                            <%   
+                             } 
+                             else 
+                             {                                                    
+                           %>
+                           <option value="<%=(String) AWSlst.get(i)%>"><%=(String) AWSlst.get(i)%></option>
+                        
+                           <% 
+                             }                          
                             } 
                             %>  
                           </select>                       
                           </td>
                           <td>
-                            <select name="languages1" id="lang1" style="width: 200px;">
-                              <option value="javascript">USD</option>
-                              <option value="php">CAD</option>
-                              <option value="java">EURO</option>
-                            </select>
+                            <select name="region2" id="region2" style="width: 200px;" onchange="myFunctiondemo()">
+                              <%
+                              for(int i = 0; i < Azurelst.size() ; i++) {   
+                              if(strRegion12.equals((String) Azurelst.get(i)))       
+                              {                                                
+                           %>
+                              <option selected value="<%=(String) Azurelst.get(i)%>"><%=(String) Azurelst.get(i)%></option>
+                           
+                            <%   
+                             } 
+                             else 
+                             {                                                    
+                           %>
+                           <option value="<%=(String) Azurelst.get(i)%>"><%=(String) Azurelst.get(i)%></option>
+                        
+                           <% 
+                             }                          
+                            } 
+                            %>   
+                             </select> 
                           </td>
                           <td>
-                            <select name="languages1" id="lang1" style="width: 200px;">
-                              <option value="javascript">USD</option>
-                              <option value="php">CAD</option>
-                              <option value="java">EURO</option>
-                            </select>
+                            <select name="region3" id="region3" style="width: 200px;" onchange="myFunctiondemo()"> 
+                              <%
+                              for(int i = 0; i < GCPlst.size() ; i++) {   
+                              if(strRegion13.equals((String) GCPlst.get(i)))       
+                              {                                                
+                           %>
+                              <option selected value="<%=(String) GCPlst.get(i)%>"><%=(String) GCPlst.get(i)%></option>
+                           
+                            <%   
+                             } 
+                             else 
+                             {                                                    
+                           %>
+                           <option value="<%=(String) GCPlst.get(i)%>"><%=(String) GCPlst.get(i)%></option>
+                        
+                           <% 
+                             }                          
+                            } 
+                            %>   
+                             </select> 
                           </td>
                           <td>
-                            <select name="languages1" id="lang1" style="width: 200px;">
-                              <option value="javascript">USD</option>
-                              <option value="php">CAD</option>
-                              <option value="java">EURO</option>
-                            </select>
+                            <select name="region4" id="region4" style="width: 200px;" onchange="myFunctiondemo()">
+                              <%
+                              for(int i = 0; i < Oraclelst.size() ; i++) {   
+                              if(strRegion14.equals((String) Oraclelst.get(i)))       
+                              {                                                
+                           %>
+                              <option selected value="<%=(String) Oraclelst.get(i)%>"><%=(String) Oraclelst.get(i)%></option>
+                           
+                            <%   
+                             } 
+                             else 
+                             {                                                    
+                           %>
+                           <option value="<%=(String) Oraclelst.get(i)%>"><%=(String) Oraclelst.get(i)%></option>
+                        
+                           <% 
+                             }                          
+                            } 
+                            %>  
+                             </select> 
                           </td>
                         </tr>                       
                         <tr>
-                            <td><br><b>Product Name</b><br><br></td>
-                            <td>Eats everyone's leftovers</td>
-                            <td>Nibbles at food</td>
-                            <td>Hearty eater</td>
-                            <td>Will eat till he explodes</td>
+                            <td><br><b>Product Details</b><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></td>
+                            <td><%=strAWSVM%></td>
+                            <td><%=strAzureVM%></td>
+                            <td><%=strGCPVM%></td>
+                            <td><%=strOracleVM%></td>
                           </tr>
                           <tr>
-                            <td><br><b>Product Details</b><br><br></td>
-                            <td>Eats everyone's leftovers</td>
-                            <td>Nibbles at food</td>
-                            <td>Hearty eater</td>
-                            <td>Will eat till he explodes</td>
+                            <td><b>Hourly Cost</b></td>
+                            <td><%=strAWSVMHCost%></td>
+                            <td><%=strAzureVMHCost%></td>
+                            <td><%=strGCPVMHCost%></td>
+                            <td><%=strOracleVMHCost%></td>
                           </tr>
                           <tr>
-                            <td><br><b>Notes</b><br><br></td>
-                            <td>Eats everyone's leftovers</td>
-                            <td>Nibbles at food</td>
-                            <td>Hearty eater</td>
-                            <td>Will eat till he explodes</td>
-                          </tr>                
+                            <td><b>Monthly Cost</b></td>
+                            <td><%=strAWSVMHCost%></td>
+                            <td><%=strAzureVMHCost%></td>
+                            <td><%=strGCPVMHCost%></td>
+                            <td><%=strOracleVMHCost%></td>
+                          </tr>    
+                          <tr>
+                            <td><b>1 Year Cost</b></td>
+                            <td><%=strAWSVM1YCost%></td>
+                            <td><%=strAzureVM1YCost%></td>
+                            <td><%=strGCPVM1YCost%></td>
+                            <td><%=strOracleVM1YCost%></td>
+                          </tr>  
+                          <tr>
+                            <td><b>3 Year Cost</b></td>
+                            <td><%=strAWSVM3YCost%></td>
+                            <td><%=strAzureVM3YCost%></td>
+                            <td><%=strGCPVM3YCost%></td>
+                            <td><%=strOracleVM3YCost%></td>
+                          </tr>             
                       </table>
               </form>
             </section>
@@ -205,22 +315,25 @@ img:hover {
 <script>
     function loadhtml(id, filename) {
         let element = document.getElementById(id);      
-        document.location = "";
+        document.getElementById("myForm").submit();
        
     }
+
+  function myFunctiondemo() {
+    this.form1.submit();
+  }
 </script>
-
-
 
 
 <%!
 public void JSONService() throws Exception {
-  System.out.println("hi");
-URL url = new URL("https://prices.azure.com/api/retail/prices");
+    System.out.println("hi");
+    URL url = new URL("https://prices.azure.com/api/retail/prices");
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod("GET");
 		conn.setRequestProperty("Accept", "application/json");
     System.out.println("hi21");
+    conn.connect();
 		if (conn.getResponseCode() != 200) {
 			throw new RuntimeException("Failed : HTTP error code : "
 					+ conn.getResponseCode());
@@ -262,6 +375,72 @@ URL url = new URL("https://prices.azure.com/api/retail/prices");
         }
       }
       return result;
+    }
+
+    public HashMap getAzureDetails(String strRegion, String strSKU) throws Exception {
+      HashMap hMap = new HashMap();
+      System.out.println("hi");
+      String strURL = "https://prices.azure.com/api/retail/prices?$filter=location eq '" 
+      + strRegion +"'  and skuName eq '" + strSKU + "'";
+      strURL = strURL.replace(" ", "%20");
+      URL url = new URL(strURL);
+     
+      System.out.println(url);
+      HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+      conn.setRequestMethod("GET");
+      conn.setRequestProperty("Accept", "application/json");
+     
+      conn.setRequestProperty("Connection", "keep-alive");
+      conn.connect();
+      System.out.println("hi21" + conn.getResponseCode() );
+		  if (conn.getResponseCode() != 200) {
+		  	throw new RuntimeException("Failed : HTTP error code : "
+					+ conn.getResponseCode());
+		  }
+      System.out.println("hi2");
+		  BufferedReader br = new BufferedReader(new InputStreamReader(
+			(conn.getInputStream())));
+
+		  String output = "";
+      String strOut = "";
+		  System.out.println("Output from Server .... \n");
+		  while ((output = br.readLine()) != null) {			  
+        strOut = output;
+		  }
+     
+      JSONParser jsonParser = new JSONParser();
+      JSONObject jsonObject = (JSONObject) jsonParser.parse(strOut);
+
+      JSONArray items = (JSONArray) jsonObject.get("Items");
+      System.out.println(items.size());
+      String strProduct = "";
+      String strHourCost = "";
+      String str1YCost = "";
+      String str3YCost = "";
+
+      for (int i = 0; i < items.size(); i++) {
+        //System.out.println("The " + i + " element of the array: " + items.get(i));
+        JSONObject innerObj = (JSONObject)  items.get(i);
+        System.out.println(innerObj);
+
+               if(i == 0) strProduct = innerObj.get("productName") + "" ;
+               
+               if(i == 0) strHourCost = innerObj.get("retailPrice") + "";
+               System.out.println("!" + innerObj.get("retailPrice"));
+
+               if( innerObj.get("reservationTerm") != null)
+               {
+               if(((String) innerObj.get("reservationTerm")).equals("1 Year")) str1YCost =innerObj.get("retailPrice") + "" ;
+               if(((String) innerObj.get("reservationTerm")).equals("3 Years")) str3YCost = innerObj.get("retailPrice") + "";
+               }
+      }
+      hMap.put("product", strProduct);
+      hMap.put("hourCost", strHourCost);
+      hMap.put("1YearCost", str1YCost);
+      hMap.put("3YearCost", str3YCost);
+	  	conn.disconnect();
+      System.out.println(hMap);
+      return hMap;
     }
   
 %>
