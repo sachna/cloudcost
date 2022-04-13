@@ -6,12 +6,17 @@ Hosting Cloud applications or services are ongoing need for Students, small orga
 Large Enterprises hire cloud-consulting services
 For Students and small organizations, it is difficult to make choice of Cloud Service provider
 
+![Capture](https://user-images.githubusercontent.com/100084024/163283381-76acd091-80ab-46de-beb4-1ba5981681df.JPG)
+
 **Introduction:**
 
 Complexity increases with lot of available configuration as part of cloud service
 Cloud comparison application can get easy start on needs for basic cloud services 
 Cloud comparison application can provide easy way to compare cost
 Users can customize basic options like currency, region to understand impact on cost
+
+
+
 
 **Significance:**
 
@@ -34,4 +39,3 @@ How cloud service providers price compares?
 
 
 
-![Capture](https://user-images.githubusercontent.com/100084024/163283291-08004a68-96cd-4140-8d1a-9352f014e090.JPG)
