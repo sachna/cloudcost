@@ -43,3 +43,9 @@ How cloud service providers price compares?
 ![image](https://user-images.githubusercontent.com/100084024/163283577-4e53f28d-67c9-4e01-9eab-892ece5bc093.png)
 
 
+![Capture](https://user-images.githubusercontent.com/100084024/163283665-69b6ff3c-2837-4426-aa56-912541b4bd91.JPG)
+
+![Capture](https://user-images.githubusercontent.com/100084024/163283712-adf25278-e261-4931-89d7-18214f1fd2bb.JPG)
+
+![Capture](https://user-images.githubusercontent.com/100084024/163283769-723f40a1-d893-41ce-9edd-3bf50e120fd1.JPG)
+
