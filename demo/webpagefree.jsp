@@ -12,8 +12,7 @@
 <%@ page import= "org.json.simple.parser.JSONParser"%>;
 
 <%
-//JSONService();
-makeHttpRequest();
+
 String jspPath = session.getServletContext().getRealPath("/");
 List Azurelst = FileReadingDemo(jspPath + "/AzureRegion.txt");
 List AWSlst = FileReadingDemo(jspPath + "/AWSRegion.txt");
@@ -28,8 +27,8 @@ System.out.println("Region1 = " + strRegion11);
 
 if(strRegion11 == null) strRegion11 = "US East (N. Virginia)";
 if(strRegion12 == null) strRegion12 = "East US";
-if(strRegion13 == null) strRegion13 = "Ashburn, Virigina, USA(us-east)";
-if(strRegion14 == null) strRegion14 = "US East (Ashburn)";
+if(strRegion13 == null) strRegion13 = "us-east1-b";
+if(strRegion14 == null) strRegion14 = "Global - same prices";
 System.out.println("Region1 = " + strRegion11);
 
 HashMap azureMap = getAzureDetails("US East", "E2d v4");
@@ -40,9 +39,10 @@ System.out.println(gcpMap);
 
 String strAWSVM = "";
 String strAzureVM = (String) azureMap.get("product");
-String strGCPVM = "";
-String strOracleVM = "";
-
+String strGCPVM = "App Engine is a fully managed, serverless platform for developing and hosting web applications at scale. You can choose from several popular languages, libraries, and frameworks to develop your apps, and then let App Engine take care of provisioning servers and scaling your app instances based on demand.";
+String strOracleVM = "Oracle Application Express (APEX) is a low-code development platform that enables you to build scalable, "+
+"secure enterprise apps, with world-class features, that can be deployed anywhere.Using APEX, developers can quickly develop and deploy" + 
+ "compelling apps that solve real problems and provide immediate value. ";
 String  strAWSVMHCost = "";
 String  strAzureVMHCost = (String) azureMap.get("hourCost");
 String  strGCPVMHCost = "";
@@ -133,6 +133,7 @@ img:hover {
      border: 1px solid black;
      width: 350px;
      height: auto;
+     vertical-align:top;
     }
 </style>
 </head>
@@ -143,27 +144,21 @@ img:hover {
         </header>
         <div class="wrapper clearfix">
             <nav>
-                <ul>
-                    <h3><li><a href="index.jsp">Home</a></li></h3>
-                </ul>   
-                <ul>
-                    <h3><li><a href="webpage.jsp">Web Application</a></li></h3>
-                </ul>  
-                <ul>
-                  <h3><li><a href="webpage.jsp">Custom</a></li></h3>
-                </ul>                         
+              <ul>
+                <h3><li><a href="index.jsp">Home</a></li></h3>
+            </ul>
+            <ul>
+                <h3><li><a href="webpagefree.jsp">Free Hosting</a></li></h3>
+            </ul>  
+           <ul>
+                <h3><li><a href="webpageown.jsp">Build your own</a></li></h3>
+            </ul>                          
             </nav>
             <section id="section1">
-                Welcome to our site
+              PAAS (Platform as a Service) is more popular among developers as they can put all their concentration on developing their apps and leave the rest of management and execution to the service provider. Many service providers also offer the flexibility to increase/decrease the CPU power depending upon the traffic loads giving developers cost effective and easy & effortless management
                 <br> <br> <br> <br> 
                 <form id="form1" name="form1" action="webpage.jsp" method="POST">
-                    <label for="currency"><b>Currency</b></label>
-                    <select name="currency1" id="currency1">
-                        <option value="USD">USD</option>
-                        <option value="CAD">CAD</option>
-                        <option value="EURO">EURO</option>
-                      </select>
-                    <br><br>
+               
                     <table>
                         <tr>
                           <td>&nbsp;</td>
@@ -180,132 +175,18 @@ img:hover {
                             <img src="oracle.jpg" alt="Oracle">
                           </a></td>
                         </tr>
-                        <tr>
-                          <td><b>Region</b></td>
-                          <td>                            
-                            <select name="region1" id="region1" style="width: 200px;" onchange="myFunctiondemo()">
-                           <%
-                              for(int i = 0; i < AWSlst.size() ; i++) {   
-                              if(strRegion11.equals((String) AWSlst.get(i)))       
-                              {                                                
-                           %>
-                              <option selected value="<%=(String) AWSlst.get(i)%>"><%=(String) AWSlst.get(i)%></option>
-                           
-                            <%   
-                             } 
-                             else 
-                             {                                                    
-                           %>
-                           <option value="<%=(String) AWSlst.get(i)%>"><%=(String) AWSlst.get(i)%></option>
-                        
-                           <% 
-                             }                          
-                            } 
-                            %>  
-                          </select>                       
-                          </td>
-                          <td>
-                            <select name="region2" id="region2" style="width: 200px;" onchange="myFunctiondemo()">
-                              <%
-                              for(int i = 0; i < Azurelst.size() ; i++) {   
-                              if(strRegion12.equals((String) Azurelst.get(i)))       
-                              {                                                
-                           %>
-                              <option selected value="<%=(String) Azurelst.get(i)%>"><%=(String) Azurelst.get(i)%></option>
-                           
-                            <%   
-                             } 
-                             else 
-                             {                                                    
-                           %>
-                           <option value="<%=(String) Azurelst.get(i)%>"><%=(String) Azurelst.get(i)%></option>
-                        
-                           <% 
-                             }                          
-                            } 
-                            %>   
-                             </select> 
-                          </td>
-                          <td>
-                            <select name="region3" id="region3" style="width: 200px;" onchange="myFunctiondemo()"> 
-                              <%
-                              for(int i = 0; i < GCPlst.size() ; i++) {   
-                              if(strRegion13.equals((String) GCPlst.get(i)))       
-                              {                                                
-                           %>
-                              <option selected value="<%=(String) GCPlst.get(i)%>"><%=(String) GCPlst.get(i)%></option>
-                           
-                            <%   
-                             } 
-                             else 
-                             {                                                    
-                           %>
-                           <option value="<%=(String) GCPlst.get(i)%>"><%=(String) GCPlst.get(i)%></option>
-                        
-                           <% 
-                             }                          
-                            } 
-                            %>   
-                             </select> 
-                          </td>
-                          <td>
-                            <select name="region4" id="region4" style="width: 200px;" onchange="myFunctiondemo()">
-                              <%
-                              for(int i = 0; i < Oraclelst.size() ; i++) {   
-                              if(strRegion14.equals((String) Oraclelst.get(i)))       
-                              {                                                
-                           %>
-                              <option selected value="<%=(String) Oraclelst.get(i)%>"><%=(String) Oraclelst.get(i)%></option>
-                           
-                            <%   
-                             } 
-                             else 
-                             {                                                    
-                           %>
-                           <option value="<%=(String) Oraclelst.get(i)%>"><%=(String) Oraclelst.get(i)%></option>
-                        
-                           <% 
-                             }                          
-                            } 
-                            %>  
-                             </select> 
-                          </td>
-                        </tr>                       
+                                      
                         <tr>
                             <td><br><b>Product Details</b><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></td>
-                            <td><%=strAWSVM%></td>
-                            <td><%=strAzureVM%></td>
-                            <td><%=strGCPVM%></td>
-                            <td><%=strOracleVM%></td>
+                            <td><b>Elastic Beanstalk</b><br><br> AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.</td>
+                            <td><b>App Service</b><br><br>Quickly and easily create enterprise-ready web and mobile apps for any platform or device, and deploy them on a scalable and reliable cloud infrastructure.
+
+                              Migrate to Azure App Service
+                              Build web apps</td>
+                            <td><b>App Engine</b><br><br><%=strGCPVM%></td>
+                            <td><b>Apex</b><br><br><%=strOracleVM%></td>
                           </tr>
-                          <tr>
-                            <td><b>Hourly Cost</b></td>
-                            <td><%=strAWSVMHCost%></td>
-                            <td><%=strAzureVMHCost%></td>
-                            <td><%=strGCPVMHCost%></td>
-                            <td><%=strOracleVMHCost%></td>
-                          </tr>
-                          <tr>
-                            <td><b>Monthly Cost</b></td>
-                            <td><%=strAWSVMHCost%></td>
-                            <td><%=strAzureVMHCost%></td>
-                            <td><%=strGCPVMHCost%></td>
-                            <td><%=strOracleVMHCost%></td>
-                          </tr>    
-                          <tr>
-                            <td><b>1 Year Cost</b></td>
-                            <td><%=strAWSVM1YCost%></td>
-                            <td><%=strAzureVM1YCost%></td>
-                            <td><%=strGCPVM1YCost%></td>
-                            <td><%=strOracleVM1YCost%></td>
-                          </tr>  
-                          <tr>
-                            <td><b>3 Year Cost</b></td>
-                            <td><%=strAWSVM3YCost%></td>
-                            <td><%=strAzureVM3YCost%></td>
-                            <td><%=strGCPVM3YCost%></td>
-                            <td><%=strOracleVM3YCost%></td>
-                          </tr>             
+           
                       </table>
               </form>
             </section>

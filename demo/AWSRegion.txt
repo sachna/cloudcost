@@ -1,24 +1,12 @@
-Africa (Cape Town)
-Asia Pacific (Hong Kong)
-Asia Pacific (Jakarta)
-Asia Pacific (Mumbai)
-Asia Pacific (Osaka)
-Asia Pacific (Seoul)
-Asia Pacific (Singapore)
-Asia Pacific (Sydney)
-Asia Pacific (Tokyo)
-AWS GovCloud (US-East)
-AWS GovCloud (US-West)
-Canada (Central)
-Europe (Frankfurt)
-Europe (Ireland)
-Europe (London)
-Europe (Milan)
-Europe (Paris)
-Europe (Stockholm)
-Middle East (Bahrain)
-South America (São Paulo)
-US East (N. Virginia)
-US East (Ohio)
-US West (N. California)
-US West (Oregon)
+us-east-2
+us-east-1
+us-west-1
+us-west-2
+af-south-1
+ap-east-1
+ap-south-1
+ap-northeast-3
+ap-northeast-2
+ap-southeast-1
+ap-southeast-2
+ap-northeast-1

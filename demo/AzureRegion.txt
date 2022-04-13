@@ -1,24 +1,30 @@
-Australia East
-Brazil South
-Canada Central
-Central India
 Central US
-China North 3
-East Asia
 East US
 East US 2
-France Central
-Germany West Central
-Japan East
-Korea Central
-North Europe
-Norway East
-South Africa North
+North Central US
 South Central US
-Southeast Asia
-Sweden Central
-UK South
-US Gov Virginia
-West Europe
+West Central US
+West US
 West US 2
 West US 3
+UK West
+UAE North
+Switzerland West
+Sweden South
+Norway West
+Korea South
+Japan West
+South India
+West India
+Germany West Central
+France South
+West Europe
+Canada East
+Brazil Southeast
+US Gov Texas
+US Gov Virginia
+Australia Central 2
+Australia East
+Australia Southeast
+Southeast Asia
+South Africa West

@@ -58,7 +58,9 @@
 <body>
     <div class="container">
         <header>
-            <h1>Cloud Cost Comparision</h1>
+		<div>
+            <h1><font color = "blue">Cloud Cost Comparision </font> </h1>
+			</div>
         </header>
         <div class="wrapper clearfix">
             <nav>
@@ -66,24 +68,26 @@
                     <h3><li><a href="index.jsp">Home</a></li></h3>
                 </ul>
                 <ul>
-                    <h3><li><a href="webpage.jsp">Web Application</a></li></h3>
+                    <h3><li><a href="webpagefree.jsp">Free Hosting</a></li></h3>
                 </ul>  
-                <ul>
-                    <h3><li><a href="webpage.jsp">Web Application</a></li></h3>
-                </ul> 
-                <ul>
-                    <h3><li><a href="webpage.jsp">Web Application</a></li></h3>
-                </ul> 
-                <ul>
-                    <h3><li><a href="webpage.jsp">Web Application</a></li></h3>
-                </ul> 
-                <ul>
-                    <h3><li><a href="webpage.jsp">Web Application</a></li></h3>
-                </ul>                            
+               <ul>
+                    <h3><li><a href="webpageown.jsp">Build your own</a></li></h3>
+                </ul>                         
             </nav>
             <section id="section1">
-                <h2>Welcome to our site</h2>
-                <p>Here you will learn how to create websites...</p>
+<p><h1>What is cloud computing?</h1><p>
+Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. Instead of buying, owning, and maintaining physical data centers and servers, you can access technology services, such as computing power, storage, and databases, on an as-needed basis from a cloud provider like Amazon Web Services (AWS).
+
+<p><h1>Who are Cloud Providers?</h1><p>
+There are a handful of well-known, major public cloud companies such as Alibaba Cloud, Amazon Web Services (AWS), Google Cloud Platform (GCP), IBM Cloud, Oracle Cloud, and Microsoft Azure but there are also hundreds of other cloud computing providers all over the world.
+
+<p><h1>Ready to host your application on Cloud?</h1><p>
+
+<h3><li><a href="webpagefree.jsp">Explore Free options</a></li></h3>
+
+
+<p><h1>Advanced User?</h1><p>
+<h3><li><a href="webpageown.jsp">Build your own</a></li></h3>
             </section>
         </div>
         <footer>

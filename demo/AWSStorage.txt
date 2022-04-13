@@ -1,0 +1,6 @@
+General Purpose SSD gp3- Storage
+General Purpose SSD gp3- IOPS
+General Purpose SSD gp3- Throughput
+General Purpose SSD gp2 - Volumes
+Provisioned IOPS SSD io2- Storage
+Provisioned IOPS SSD io2- IOPS

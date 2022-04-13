@@ -13,6 +13,7 @@
 
 <%
 //JSONService();
+
 makeHttpRequest();
 String jspPath = session.getServletContext().getRealPath("/");
 List Azurelst = FileReadingDemo(jspPath + "/AzureRegion.txt");

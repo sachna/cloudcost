@@ -1,0 +1,21 @@
+n1-standard-2 ~ 0.077 - 56.37 ~ 0.048 - 423.11 ~ 0.034 - 880.38 ~ Test
+n1-standard-4 ~ 0.134012 - 96.72 ~ 0.048 - 423.11 ~ 0.034 - 880.38 ~   4 vCPU 16 GB Memory
+n1-standard-8 ~ 0.077 - 56.37 ~ 0.048 - 423.11 ~ 0.034 - 880.38
+n1-standard-16 ~ 0.077 - 56.37 ~ 0.048 - 423.11 ~ 0.034 - 880.38
+n1-standard-32
+n1-standard-64
+n1-standard-96
+n1-highcpu-2
+n1-highcpu-4
+n1-highcpu-8
+n1-highcpu-16
+n1-highcpu-32
+n1-highcpu-64
+n1-highcpu-96
+n1-highmem-2
+n1-highmem-4
+n1-highmem-8
+n1-highmem-16
+n1-highmem-32
+n1-highmem-64
+n1-highmem-96
