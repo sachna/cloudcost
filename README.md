@@ -40,10 +40,10 @@ How cloud service providers price compares?
 
 ![Capture](https://user-images.githubusercontent.com/100084024/163283544-449a1003-0446-470c-8f6c-3c716438b7f1.JPG)
 
+**System Architecture
+**
 
 ![Capture](https://user-images.githubusercontent.com/100084024/163289477-cf6a2561-9309-4d0f-a17c-63a3c89cfe97.JPG)
-
-![image](https://user-images.githubusercontent.com/100084024/163283577-4e53f28d-67c9-4e01-9eab-892ece5bc093.png)
 
 
 ![Capture](https://user-images.githubusercontent.com/100084024/163283665-69b6ff3c-2837-4426-aa56-912541b4bd91.JPG)
