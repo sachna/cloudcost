@@ -44,9 +44,18 @@ How cloud service providers price compares?
 
  ## System Architecture  ##
 
+System has 3 major components. 
+1 backend server which serves user with GUI 
+2 API services module which pulls price data from Cloud Service provider like AWS, Azure and loads into flat file systems
+3 Database is flat files and updated peridiocally
+
 ![Capture](https://user-images.githubusercontent.com/100084024/163289477-cf6a2561-9309-4d0f-a17c-63a3c89cfe97.JPG)
 
  ## GUI ##
+
+Graphial Interface provides easy starting point for user with limited understanding of cloud.
+For users who just needs services and need scalability it shows static page with PaaS as solution with all components available in Cloud Service Providers.
+For advanced users it provide interactive UI for IaaS with price details for various combination
 
 ![Capture](https://user-images.githubusercontent.com/100084024/163283665-69b6ff3c-2837-4426-aa56-912541b4bd91.JPG)
 
