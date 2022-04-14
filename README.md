@@ -53,7 +53,7 @@ System has 3 major components.
 
  ## GUI ##
 
-Graphial Interface provides easy starting point for user with limited understanding of cloud.
+Graphical User Interface provides easy starting point for user with limited understanding of cloud.
 For users who just needs services and need scalability it shows static page with PaaS as solution with all components available in Cloud Service Providers.
 For advanced users it provide interactive UI for IaaS with price details for various combination
 
@@ -64,6 +64,8 @@ For advanced users it provide interactive UI for IaaS with price details for var
 ![Capture](https://user-images.githubusercontent.com/100084024/163283769-723f40a1-d893-41ce-9edd-3bf50e120fd1.JPG)
 
 ## Conclusion ##
+
+Desiging Cloud Service Provider comparision application serves motivation to increase adoption of cloud services across student community and use best configuration which are cost effective.
 
 
 ## References ##
