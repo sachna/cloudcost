@@ -72,7 +72,7 @@ For advanced user with complex needs where PaaS is not option but needs Infrastr
 
 ## Conclusion ##
 
-Desiging Cloud Service Provider comparision application serves motivation to increase adoption of cloud services across student community and use best configuration which are cost effective.
+Desiging Cloud Service Provider comparision application serves motivation to increase adoption of cloud services across student community and use best configuration which are cost effective. Cloud cost varies with lot of factors and pricing model. This application can be enhanced to include AI/ML module which gives best options across Cloud Service Providers based user specific needs. 
 
 
 ## References ##
