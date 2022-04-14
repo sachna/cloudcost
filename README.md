@@ -33,7 +33,7 @@ Reading through various blogs, product documentation & video is complex
 
  ## Research Question  ##
 
-1 What are basic services needed for Cloud hosting? </br>
+1 What are basic components of Cloud hosting? </br>
 2 What are different pricing model for Cloud Service Providers?  </br>
 3 How cloud service providers price compares?  </br>
 
@@ -57,9 +57,16 @@ Graphical User Interface provides easy starting point for user with limited unde
 For users who just needs services and need scalability it shows static page with PaaS as solution with all components available in Cloud Service Providers.
 For advanced users it provide interactive UI for IaaS with price details for various combination
 
+Research questions are addressed in application i.e. it covered what are building blocks of Cloud, price comparision, options based on user needs
+
+Starting point of application
 ![Capture](https://user-images.githubusercontent.com/100084024/163283665-69b6ff3c-2837-4426-aa56-912541b4bd91.JPG)
 
+Free or limited cost option using Platform as service and what are options availble with each Vendor
+
 ![Capture](https://user-images.githubusercontent.com/100084024/163283712-adf25278-e261-4931-89d7-18214f1fd2bb.JPG)
+
+For advanced user with complex needs where PaaS is not option but needs Infrastructure as Service then how cost varies with configuration.
 
 ![Capture](https://user-images.githubusercontent.com/100084024/163283769-723f40a1-d893-41ce-9edd-3bf50e120fd1.JPG)
 
