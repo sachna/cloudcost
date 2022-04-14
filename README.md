@@ -33,9 +33,9 @@ Reading through various blogs, product documentation & video is complex
 
  ## Research Question  ##
 
-1 What are basic services needed for Cloud hosting?
-2 What are different pricing model for Cloud Service Providers?
-3 How cloud service providers price compares?
+1 What are basic services needed for Cloud hosting? </br>
+2 What are different pricing model for Cloud Service Providers?  </br>
+3 How cloud service providers price compares?  </br>
 
  ## Analysis  ##
 
