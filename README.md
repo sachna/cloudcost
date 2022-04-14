@@ -37,8 +37,10 @@ What are basic services needed for Cloud hosting?
 What are different pricing model for Cloud Service Providers?
 How cloud service providers price compares?
 
+**Analysis**
 
-![Capture](https://user-images.githubusercontent.com/100084024/163283544-449a1003-0446-470c-8f6c-3c716438b7f1.JPG)
+![Capture](https://user-images.githubusercontent.com/100084024/163289666-9b44db70-48c2-48f8-aa89-3ae5c937521d.JPG)
+
 
 **System Architecture**
 
