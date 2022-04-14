@@ -2,9 +2,9 @@
 
 ## Abstract: ##
 
-Hosting Cloud applications or services are ongoing need for Students, small organization like large enterprises
-Large Enterprises hire cloud-consulting services
-For Students and small organizations, it is difficult to make choice of Cloud Service provider
+Hosting Cloud applications or services are ongoing need for Students, small organization just like large enterprises.
+Large Enterprises hire cloud-consulting services.
+For Students and small organizations, it is difficult to make choice of Cloud Service provider & where to start.
 
 ![Capture](https://user-images.githubusercontent.com/100084024/163283463-476be58d-87d1-4dca-be7e-0aa3c8ae3845.JPG)
 
