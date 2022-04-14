@@ -63,3 +63,21 @@ For advanced users it provide interactive UI for IaaS with price details for var
 
 ![Capture](https://user-images.githubusercontent.com/100084024/163283769-723f40a1-d893-41ce-9edd-3bf50e120fd1.JPG)
 
+## Conclusion ##
+
+
+## References ##
+
+Villamizar, M., Garces, O., Ochoa, L., Castro, H., Salamanca, L., Verano, M., ... & Lang, M. (2016, May). Infrastructure cost comparison of running web applications in the cloud using AWS lambda and monolithic and microservice architectures. In 2016 16th IEEE/ACM International Symposium on Cluster, Cloud and Grid Computing (CCGrid) (pp. 179-182). IEEE.
+
+Li, X., Li, Y., Liu, T., Qiu, J., & Wang, F. (2009, September). The method and tool of cost analysis for cloud computing. In 2009 IEEE International Conference on Cloud Computing (pp. 93-100). IEEE.
+
+Alzakholi, O., Shukur, H., Zebari, R., Abas, S., & Sadeeq, M. (2020). Comparison among cloud technologies and cloud performance. Journal of Applied Science and Technology Trends, 1(2), 40-47.
+
+Carlyle, A. G., Harrell, S. L., & Smith, P. M. (2010, November). Cost-effective HPC: The community or the cloud?. In 2010 IEEE Second International Conference on Cloud Computing Technology and Science (pp. 169-176). IEEE.
+
+Peng, J., Zhang, X., Lei, Z., Zhang, B., Zhang, W., & Li, Q. (2009, December). Comparison of several cloud computing platforms. In 2009 Second international symposium on information science and engineering (pp. 23-27). IEEE.
+
+Li, A., Yang, X., Kandula, S., & Zhang, M. (2010, November). CloudCmp: comparing public cloud providers. In Proceedings of the 10th ACM SIGCOMM conference on Internet measurement (pp. 1-14).
+
+
