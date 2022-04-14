@@ -10,7 +10,7 @@ For Students and small organizations, it is difficult to make choice of Cloud Se
 
 ## Introduction: ##
 
-Complexity increases with lot of available configuration as part of cloud service
+Complexity increases with lot of available configuration as part of cloud services.
 Cloud comparison application can get easy start on needs for basic cloud services 
 Cloud comparison application can provide easy way to compare cost
 Users can customize basic options like currency, region to understand impact on cost
